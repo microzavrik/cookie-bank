@@ -12,7 +12,7 @@ namespace network
             switch(create_packet_type)
             {
             case types::PacketType::Login:
-                
+                return packets::LoginPacket("123123");
                 break;
             case types::PacketType::GetDataAccount:
                 break;

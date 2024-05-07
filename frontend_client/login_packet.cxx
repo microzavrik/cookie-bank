@@ -8,7 +8,11 @@ namespace network
     {
         std::string LoginPacket::to_json() 
         {
+            nlohmann::json json;
+            json["packet_type"] = pack_type_str;
+            json["machine_id"] = machine_id_;
 
+            return json.dump();
         }
     }
 }
