@@ -3,6 +3,8 @@
 
 #include "base_packet.hxx"
 
+#include "system_utils.hxx"
+
 namespace network
 {
     namespace packets
@@ -12,7 +14,7 @@ namespace network
             std::string machine_id_;
 
             LoginPacket(const std::string& machineid)
-                : BasePacket("login", types::PacketType::Login), machine_id_(machineid) { }
+                : BasePacket("login", types::PacketType::Login), machine_id_(system_utils::get_machine_id_linux()) { }
 
             std::string to_json() override;
         };

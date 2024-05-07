@@ -17,7 +17,8 @@ namespace network
 
     void TCPClient::send_messages(const std::string& send_data, types::PacketType type)
     {
-        
+        auto packet_object = network::packets::CreatePacket(type, send_data);
+        asio::write(socket_, asio::buffer(packet_object.to_json()));
     }
 
     void TCPClient::received_messages()

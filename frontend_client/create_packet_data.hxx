@@ -11,10 +11,7 @@ namespace network
 {
     namespace packets
     {
-        class CreatePacketData
-        {
-            static network::packets::BasePacket CreatePacket(types::PacketType create_packet_type, const std::string& data_for_packet);
-        };
+        network::packets::BasePacket CreatePacket(types::PacketType create_packet_type, const std::string& data_for_packet);
     }
 }
 
