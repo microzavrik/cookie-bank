@@ -10,7 +10,7 @@ namespace network
         struct BasePacket
         {
             BasePacket(const std::string& type_str, types::PacketType pack_type) : pack_type_str(type_str), pack_type_(pack_type) { }
-            virtual std::string to_json();
+            virtual std::string to_json() { return ""; }
             ~BasePacket() { }
             types::PacketType pack_type_;
             std::string pack_type_str;

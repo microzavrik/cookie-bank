@@ -1,6 +1,7 @@
 #include "create_packet_data.hxx"
 
 #include "login_packet.hxx"
+#include "undefined_packet.hxx"
 
 namespace network
 {
@@ -19,6 +20,8 @@ namespace network
             default:
                 break;
             }
+
+            return network::packets::UndefinedPacket();
        } 
     }
 }
