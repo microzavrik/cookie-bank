@@ -4,6 +4,8 @@
 #include <string>
 
 #include "packet_types.hxx"
+#include "base_packet.hxx"
+
 
 namespace network
 {
@@ -11,8 +13,7 @@ namespace network
     {
         class CreatePacketData
         {
-            template<typename T>
-            static T CreatePacket(types::PacketType create_packet_type, const std::string& data_for_packet);
+            static network::packets::BasePacket CreatePacket(types::PacketType create_packet_type, const std::string& data_for_packet);
         };
     }
 }

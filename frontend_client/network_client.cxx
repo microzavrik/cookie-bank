@@ -15,9 +15,9 @@ namespace network
         std::thread(&network::TCPClient::received_messages, this).detach();
     }
 
-    void TCPClient::send_messages(const std::string& send_data)
+    void TCPClient::send_messages(const std::string& send_data, types::PacketType type)
     {
-        asio::write(socket_, asio::buffer(send_data + "\n"));
+        
     }
 
     void TCPClient::received_messages()
