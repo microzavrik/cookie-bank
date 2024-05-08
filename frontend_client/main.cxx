@@ -1,9 +1,19 @@
-#include "cookie_clicker.hxx"
+#include "network_client.hxx"
 
-int main()
+int main(int argc, char* argv[])
 {
-    std::cout << "commit test" << std::endl;
-    UI::CookieClicker cookie_clicker(800, 600);
-    cookie_clicker.run();
-    return 1;
+    try
+    {
+        asio::io_context ios;
+        network::TCPClient client(ios, "127.0.0.1", 3333);
+        client.send_messages("", types::PacketType::Login);
+
+        ios.run();
+    }
+    catch(const std::exception& ex)
+    {
+        std::cerr << ex.what() << std::endl;
+        return -1;
+    }
+    return 0;
 }

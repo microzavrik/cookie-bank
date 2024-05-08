@@ -14,9 +14,8 @@ namespace network
     {
     public:
         TCPClient(io_context &ios, const std::string &host, short port);
-
-    private:
         void send_messages(const std::string& send_data, types::PacketType type);
+    private:
         void received_messages();
 
         tcp::socket socket_;

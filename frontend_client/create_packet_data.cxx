@@ -15,11 +15,7 @@ namespace network
             switch(create_packet_type)
             {
                 case types::PacketType::Login:
-                    if(!utils::check_json_format_valid(data_for_packet, create_packet_type)) {
-                        return network::packets::UndefinedPacket();
-                    }
-                    
-                    return packets::LoginPacket("123123");
+                    return packets::LoginPacket();
             case types::PacketType::GetDataAccount:
                 break;
             default:

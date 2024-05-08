@@ -6,7 +6,7 @@ namespace network
 {
     namespace packets
     {
-        std::string LoginPacket::to_json() 
+        std::string LoginPacket::to_json()
         {
             nlohmann::json json;
             json["packet_type"] = pack_type_str;
@@ -14,5 +14,7 @@ namespace network
 
             return json.dump();
         }
+
+        void LoginPacket::convert_to_object(const std::string &source) { return; }
     }
 }

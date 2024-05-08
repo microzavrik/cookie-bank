@@ -13,10 +13,11 @@ namespace network
         {
             std::string machine_id_;
 
-            LoginPacket(const std::string& machineid)
+            LoginPacket()
                 : BasePacket("login", types::PacketType::Login), machine_id_(system_utils::get_machine_id_linux()) { }
 
             std::string to_json() override;
+            void convert_to_object(const std::string& source) override;
         };
     }
 }
