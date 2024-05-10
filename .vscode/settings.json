@@ -76,6 +76,12 @@
         "coroutine": "cpp",
         "set": "cpp",
         "shared_mutex": "cpp",
-        "typeindex": "cpp"
+        "typeindex": "cpp",
+        "bitset": "cpp",
+        "forward_list": "cpp",
+        "unordered_set": "cpp",
+        "hash_set": "cpp",
+        "cfenv": "cpp",
+        "valarray": "cpp"
     }
 }
